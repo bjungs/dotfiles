@@ -1,0 +1,134 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always",
+          },
+        },
+      },
+      "enable_lsp_tasks": true,
+    },
+  },
+  "project_panel": {
+    "dock": "left",
+  },
+  "outline_panel": {
+    "dock": "right",
+  },
+  "collaboration_panel": {
+    "dock": "right",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "format_on_save": "off",
+  "show_whitespaces": "selection",
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "fetch": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^https?://unpkg\\.com",
+            },
+          ],
+        },
+        "terminal": {
+          "default": "allow",
+        },
+      },
+    },
+    "dock": "right",
+    "inline_assistant_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4.1",
+      "enable_thinking": false,
+    },
+    "default_profile": "write",
+    "default_model": {
+      "effort": "medium",
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.6",
+      "enable_thinking": true,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry",
+    },
+  },
+  "hide_mouse": "never",
+  "show_wrap_guides": false,
+  "middle_click_paste": false,
+  "base_keymap": "JetBrains",
+  "ui_font_size": 18.0,
+  "ui_font_family": "Adwaita Mono",
+  "ui_font_features": {
+    "calt": false,
+  },
+  "buffer_font_size": 15.0,
+  "buffer_font_family": "Noto Sans Mono",
+  "buffer_font_features": {
+    "calt": false,
+  },
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark",
+  },
+  "cursor_shape": "block",
+  "cursor_blink": false,
+  "gutter": {
+    "line_numbers": false,
+    "runnables": true,
+    "breakpoints": true,
+    "folds": false,
+    "min_line_number_digits": 4,
+  },
+  "soft_wrap": "editor_width",
+  "edit_predictions": {
+    "mode": "eager",
+    "provider": "copilot",
+    "copilot": {
+      "enterprise_uri": "https://imec.ghe.com",
+    },
+  },
+  "languages": {
+    "TypeScript": {
+      "prettier": {
+        "singleQuote": true,
+        "plugins": ["@trivago/prettier-plugin-sort-imports"],
+        "importOrder": [
+          "<BUILTIN_MODULES>",
+          "<THIRD_PARTY_MODULES>",
+          "^@/(.*)$",
+          "^[./]",
+        ],
+        "importOrderSeparation": true,
+      },
+    },
+  },
+}

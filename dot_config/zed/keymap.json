@@ -1,0 +1,381 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    // global ctx
+    "unbind": {
+      "shift-escape": "workspace::ToggleZoom",
+      "ctrl-k ctrl-o": "workspace::Open",
+      "ctrl-o": "workspace::OpenFiles",
+      "ctrl-q": "zed::Quit",
+    },
+    "bindings": {
+      // conflicts w/ custom kbd layer
+      "alt-up": null,
+      "alt-down": null,
+      "alt-left": null,
+      "alt-right": null,
+
+      // docks
+      "escape": "editor::ToggleFocus",
+      "alt-'": "workspace::ToggleAllDocks",
+
+      // font resize
+      "ctrl-+": "zed::IncreaseUiFontSize",
+      "ctrl-_": "zed::DecreaseUiFontSize",
+
+      "ctrl-shift-o": "workspace::Open",
+      "ctrl-alt-0": "agent::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      // ctrl-k madness
+      "ctrl-k": "git_panel::ToggleFocus",
+
+      "ctrl-k ctrl-left": "workspace::ActivatePaneLeft",
+      "ctrl-k ctrl-right": "workspace::ActivatePaneRight",
+      "ctrl-k ctrl-up": "workspace::ActivatePaneUp",
+      "ctrl-k ctrl-down": "workspace::ActivatePaneDown",
+      "ctrl-k shift-left": "workspace::SwapPaneLeft",
+      "ctrl-k shift-right": "workspace::SwapPaneRight",
+      "ctrl-k shift-up": "workspace::SwapPaneUp",
+      "ctrl-k shift-down": "workspace::SwapPaneDown",
+
+      "ctrl-k ctrl-q": "editor::Rewrap",
+      "ctrl-k q": "editor::Rewrap",
+      "ctrl-k ctrl-shift-d": "editor::SelectPrevious",
+      "ctrl-k ctrl-i": "editor::Hover",
+      "ctrl-k ctrl-b": "editor::BlameHover",
+      "ctrl-/": "editor::ToggleComments",
+      "ctrl-k ctrl-c": "editor::ToggleComments",
+      "ctrl-k ctrl-z": "editor::ToggleSoftWrap",
+      "ctrl-k z": "editor::ToggleSoftWrap",
+      "ctrl-k ctrl-r": "git::Restore",
+      "ctrl-k l": "agent::OpenRulesLibrary",
+      "ctrl-k ctrl-d": "editor::SelectNext",
+      "ctrl-k s": "workspace::SaveWithoutFormat",
+      "ctrl-k ctrl-s": "zed::OpenKeymap",
+      "ctrl-k ctrl-t": "theme_selector::Toggle",
+      "ctrl-k ctrl-shift-t": "theme::ToggleMode",
+      "ctrl-k n": "encoding_selector::Toggle",
+      "ctrl-k m": "language_selector::Toggle",
+      "ctrl-k ctrl-m": "toolchain::AddToolchain",
+
+      "alt-1": ["workspace::ActivatePane", 0],
+      "alt-2": ["workspace::ActivatePane", 1],
+      "alt-3": ["workspace::ActivatePane", 2],
+      "alt-4": ["workspace::ActivatePane", 3],
+      "alt-5": ["workspace::ActivatePane", 4],
+      "alt-6": ["workspace::ActivatePane", 5],
+      "alt-7": ["workspace::ActivatePane", 6],
+      "alt-8": ["workspace::ActivatePane", 7],
+      "alt-9": ["workspace::ActivatePane", 8],
+
+      "ctrl-w": "pane::CloseActiveItem",
+      "ctrl-shift-w": "pane::ReopenClosedItem",
+
+      // tasks
+      "alt-t": "task::Rerun",
+
+      "alt-ctrl-shift-=": "workspace::IncreaseOpenDocksSize",
+      "alt-ctrl-shift--": "workspace::DecreaseOpenDocksSize",
+    },
+    "bindings": {
+      // basic
+      "alt-s": "workspace::Save",
+
+      // panels
+      "alt-e": "pane::ActivateNextItem",
+      "alt-shift-e": "pane::ActivatePreviousItem",
+      "alt-q left": "workspace::ActivatePaneLeft",
+      "alt-q right": "workspace::ActivatePaneRight",
+      "alt-q up": "workspace::ActivatePaneUp",
+      "alt-q down": "workspace::ActivatePaneDown",
+      "alt-+": "workspace::ToggleZoom",
+
+      // panel split - still a bit weird
+      "alt-t right": "pane::SplitAndMoveRight",
+      "alt-t left": "pane::SplitAndMoveLeft",
+      "alt-t up": "pane::SplitAndMoveUp",
+      "alt-t down": "pane::SplitAndMoveDown",
+      "alt-t alt-t": "pane::JoinIntoNext",
+
+      // resizing
+      "ctrl-shift-up": "vim::ResizePaneUp",
+      "ctrl-shift-down": "vim::ResizePaneDown",
+      "ctrl-shift-right": "vim::ResizePaneRight",
+      "ctrl-shift-left": "vim::ResizePaneLeft",
+
+      // navigation
+      "alt--": "pane::GoBack",
+      "alt-=": "pane::GoForward",
+
+      // tasks
+      "alt-ctrl-r": "task::Rerun",
+
+      "alt-ctrl-shift-=": "workspace::IncreaseOpenDocksSize",
+      "alt-ctrl-shift--": "workspace::DecreaseOpenDocksSize",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-;": "editor::ToggleLineNumbers",
+      "ctrl-w": "editor::SelectLargerSyntaxNode",
+      "ctrl-shift-k": "editor::DeleteLine",
+      "ctrl-home": "editor::MoveToBeginning",
+      "ctrl-end": "editor::MoveToEnd",
+      "ctrl-u": "editor::UndoSelection",
+      "ctrl-l": "editor::SelectLine",
+      "ctrl-shift-backspace": "editor::GoToPreviousChange",
+      "ctrl-shift-home": "editor::SelectToBeginning",
+      "ctrl-shift-end": "editor::SelectToEnd",
+      "ctrl-shift-up": "editor::SelectPrevious",
+      "ctrl-shift-down": "editor::SelectNext",
+      "ctrl-alt-h": "editor::DeleteToPreviousSubwordStart",
+      "ctrl-alt-d": "editor::DeleteToNextSubwordEnd",
+      "ctrl-alt-delete": "editor::DeleteToNextSubwordEnd",
+      "ctrl-alt-backspace": "editor::DeleteToPreviousSubwordStart",
+      "shift-f6": "editor::Rename",
+      "ctrl-alt-l": "editor::Format",
+      "ctrl-[": "editor::Outdent",
+      "ctrl-]": "editor::Indent",
+      "ctrl-\\": "assistant::InlineAssist",
+
+      // multicursor
+      // Insert Cursor Above
+      "shift-alt-up": ["editor::AddSelectionAbove", { "skip_soft_wrap": true }],
+      // Insert Cursor Below
+      "shift-alt-down": [
+        "editor::AddSelectionBelow",
+        { "skip_soft_wrap": true },
+      ],
+
+      // AI prediction
+      "alt-]": "editor::NextEditPrediction",
+      "alt-j": "editor::AcceptNextLineEditPrediction",
+      "alt-k": "editor::AcceptNextWordEditPrediction",
+      "alt-ctrl-shift-e": "editor::ToggleEditPrediction",
+
+      // ctrl-k madness
+      "ctrl-k ctrl-d": "editor::SelectNext",
+      "ctrl-k ctrl-shift-d": "editor::SelectPrevious",
+      "ctrl-k ctrl-i": "editor::Hover",
+      "ctrl-k ctrl-b": "editor::BlameHover",
+      "ctrl-/": "editor::ToggleComments",
+      "ctrl-k ctrl-c": "editor::ToggleComments",
+      "ctrl-k ctrl-l": "editor::ToggleFold",
+      "ctrl-k ctrl-[": "editor::FoldRecursive",
+      "ctrl-k ctrl-]": "editor::UnfoldRecursive",
+      "ctrl-k ctrl-1": "editor::FoldAtLevel_1",
+      "ctrl-k ctrl-2": "editor::FoldAtLevel_2",
+      "ctrl-k ctrl-3": "editor::FoldAtLevel_3",
+      "ctrl-k ctrl-4": "editor::FoldAtLevel_4",
+      "ctrl-k ctrl-5": "editor::FoldAtLevel_5",
+      "ctrl-k ctrl-6": "editor::FoldAtLevel_6",
+      "ctrl-k ctrl-7": "editor::FoldAtLevel_7",
+      "ctrl-k ctrl-8": "editor::FoldAtLevel_8",
+      "ctrl-k ctrl-9": "editor::FoldAtLevel_9",
+      "ctrl-k ctrl-0": "editor::FoldAll",
+      "ctrl-k ctrl-j": "editor::UnfoldAll",
+      "ctrl-k r": "editor::RevealInFileManager",
+      // ignore warning: this is the same as in the default
+      "ctrl-k p": "editor::CopyPath",
+
+      "ctrl-k v": "svg::OpenPreviewToTheSide",
+
+      "alt-ctrl-]": "copilot::Suggest",
+    },
+    "bindings": {
+      // basic
+      "shift-enter": "editor::NewlineAbove",
+      "ctrl-enter": "editor::NewlineBelow",
+      "alt-z": "editor::Undo",
+      "alt-x": "editor::Cut",
+      "alt-c": "editor::Copy",
+      "alt-v": "editor::Paste",
+      "alt-f": "buffer_search::Deploy",
+      "ctrl-k": "vim::Yank",
+      "alt-ctrl-q": "editor::ToggleComments",
+      "alt-ctrl-c": "editor::ToggleComments",
+      "alt-shift-r": "editor::Rename",
+      "ctrl-alt-f": "editor::Format",
+      "alt-ctrl-f": "editor::OpenExcerpts",
+      "alt-ctrl-;": "editor::ToggleFold",
+
+      // AI/assistant
+      "alt-ctrl-shift-enter": "assistant::InlineAssist",
+      "escape": "editor::Cancel",
+      // multicursor
+      // Insert Cursor Above
+      "alt-ctrl--": ["editor::AddSelectionAbove", { "skip_soft_wrap": true }],
+      // Insert Cursor Below
+      "alt-ctrl-=": ["editor::AddSelectionBelow", { "skip_soft_wrap": true }],
+
+      // ai prediction
+      "alt-ctrl-]": "editor::ToggleEditPrediction",
+
+      // files
+      // missing feature: show file location (intelliJ)
+      "alt-f1": "pane::RevealInProjectPanel",
+
+      // git blame
+      "alt-y": "editor::BlameHover",
+      "alt-a": "git::Blame",
+
+      // lines
+      "ctrl-shift-i": "editor::MoveLineUp",
+      "alt-d": "editor::DeleteLine",
+      "ctrl-shift-k": "editor::MoveLineDown",
+      "alt-r": "editor::DuplicateSelection",
+      "ctrl-h": "editor::ToggleLineNumbers",
+
+      // navigation
+      "ctrl-up": ["editor::MoveUpByLines", { "lines": 4 }],
+      "ctrl-shift-up": ["editor::SelectUpByLines", { "lines": 4 }],
+      "ctrl-down": ["editor::MoveDownByLines", { "lines": 4 }],
+      "ctrl-shift-down": ["editor::SelectDownByLines", { "lines": 4 }],
+      "pageup": "editor::LineUp",
+      "ctrl-pageup": "editor::MovePageUp",
+      "pagedown": "editor::LineDown",
+      "ctrl-pagedown": "editor::MovePageDown",
+      "alt-g": "editor::ScrollCursorCenter",
+      "alt-ctrl-g": "editor::ScrollCursorCenter",
+      "ctrl-delete": "editor::DeleteToNextSubwordEnd",
+      "ctrl-backspace": "editor::DeleteToPreviousSubwordStart",
+      "ctrl-shift-delete": "editor::DeleteToNextWordEnd",
+      "ctrl-shift-backspace": "editor::DeleteToPreviousWordStart",
+      "shift-delete": "editor::DeleteToEndOfLine",
+      "alt-b": "editor::GoToTypeDefinition",
+      "ctrl-left": "editor::MoveToPreviousSubwordStart",
+      "ctrl-right": "editor::MoveToNextSubwordEnd",
+      "ctrl-home": "editor::MoveToPreviousWordStart",
+      "ctrl-end": "editor::MoveToNextWordEnd",
+
+      // text transforation
+      "ctrl-shift-u": "vim::ChangeCase",
+
+      // selection
+      "alt-w": "editor::SelectLargerSyntaxNode",
+      "alt-shift-w": "editor::SelectSmallerSyntaxNode",
+    },
+  },
+  {
+    "context": "Workspace || Editor",
+    "unbind": {
+      "ctrl-shift-k": "git::Push",
+
+      "alt-f12": "terminal_panel::Toggle",
+    },
+    "bindings": {
+      // dock
+      "alt-3": "terminal_panel::Toggle",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "alt-ctrl-z": "git::RestoreFile",
+    },
+  },
+  {
+    "context": "GitPanel",
+    "unbind": {
+      "ctrl-g up": "git::Push",
+      "ctrl-g shift-up": "git::ForcePush",
+      "ctrl-space": "git::StageAll",
+    },
+    "bindings": {
+      "alt-r": "git::Pull",
+      "alt-ctrl-p alt-ctrl-p": "git::Push",
+      "alt-s": "git::ToggleStaged",
+    },
+  },
+  {
+    "context": "GitDiff > Editor",
+    "unbind": {
+      "ctrl-k ctrl-r": "git::RestoreAndNext",
+    },
+  },
+  {
+    "context": "StashDiff > Editor",
+    "unbind": {
+      "ctrl-shift-space": "git::PopCurrentStash",
+      "ctrl-shift-backspace": "git::DropCurrentStash",
+    },
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "alt-t": "terminal::RerunTask",
+      "alt-f12": "workspace::CloseActiveDock",
+    },
+    "bindings": {
+      "alt-r": "terminal::RerunTask",
+      "alt-=": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      // pane navigation
+      "alt-1": ["pane::ActivateItem", 0],
+      "alt-2": ["pane::ActivateItem", 1],
+      "alt-3": ["pane::ActivateItem", 2],
+      "alt-4": ["pane::ActivateItem", 3],
+      "alt-5": ["pane::ActivateItem", 4],
+      "alt-6": ["pane::ActivateItem", 5],
+      "alt-7": ["pane::ActivateItem", 6],
+      "alt-8": ["pane::ActivateItem", 7],
+      "alt-9": ["pane::ActivateItem", 8],
+
+      "ctrl-pagedown": "pane::ActivateNextItem",
+      "ctrl-alt-shift-w": "workspace::CloseInactiveTabsAndPanes",
+
+      // ctrl-k madness
+      "ctrl-k e": ["pane::CloseItemsToTheLeft", { "close_pinned": false }],
+      "ctrl-k t": ["pane::CloseItemsToTheRight", { "close_pinned": false }],
+      "ctrl-k u": ["pane::CloseCleanItems", { "close_pinned": false }],
+      "ctrl-k w": ["pane::CloseAllItems", { "close_pinned": false }],
+      "ctrl-k ctrl-w": "workspace::CloseAllItemsAndPanes",
+      "ctrl-k shift-enter": "pane::TogglePinTab",
+      "ctrl-k up": "pane::SplitUp",
+      "ctrl-k down": "pane::SplitDown",
+      "ctrl-k left": "pane::SplitLeft",
+      "ctrl-k right": "pane::SplitRight",
+    },
+  },
+  {
+    "context": "MarkdownPreview",
+    "unbind": {
+      "ctrl-home": "markdown::ScrollToTop",
+      "ctrl-end": "markdown::ScrollToBottom",
+    },
+  },
+  {
+    "context": "Editor && extension == md",
+    "unbind": {
+      "ctrl-k v": "markdown::OpenPreviewToTheSide",
+      "ctrl-shift-v": "markdown::OpenPreview",
+    },
+    "bindings": {
+      "ctrl-alt-v": "markdown::OpenPreview",
+    },
+  },
+  {
+    "context": "BufferSearchBar && !in_replace > Editor",
+    "bindings": {
+      "up": "search::SelectPreviousMatch",
+      "down": "search::SelectNextMatch",
+      "ctrl-up": "search::PreviousHistoryQuery",
+      "ctrl-down": "search::NextHistoryQuery",
+    },
+  },
+]
