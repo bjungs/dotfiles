@@ -2,10 +2,9 @@
     (
         modifiers: [
             Super,
-            Shift,
         ],
-        key: "h",
-    ): Disable,
+        key: "e",
+    ): System(HomeFolder),
     (
         modifiers: [
             Super,
@@ -18,8 +17,19 @@
             Super,
             Shift,
         ],
-        key: "i",
-    ): Move(Up),
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [],
+        key: "Print",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "h",
+    ): Disable,
     (
         modifiers: [
             Super,
@@ -31,34 +41,8 @@
         modifiers: [
             Super,
         ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Shift,
-        ],
-        key: "Escape",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "f",
-    ): Fullscreen,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "h",
-    ): Disable,
-    (
-        modifiers: [
-            Ctrl,
-            Shift,
-        ],
         key: "p",
-    ): Disable,
+    ): System(Screenshot),
     (
         modifiers: [
             Super,
@@ -68,41 +52,42 @@
     (
         modifiers: [
             Super,
-            Ctrl,
-        ],
-        key: "k",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "i",
-    ): Focus(Up),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "p",
-    ): System(Screenshot),
-    (
-        modifiers: [
-            Super,
-        ],
-        key: "BackSpace",
-    ): System(LockScreen),
-    (
-        modifiers: [
-            Super,
-            Ctrl,
         ],
         key: "h",
     ): Disable,
     (
         modifiers: [
             Super,
+            Ctrl,
+            Shift,
         ],
-        key: "k",
-    ): Focus(Down),
+        key: "Down",
+    ): Disable,
+    (
+        modifiers: [
+            Ctrl,
+            Shift,
+        ],
+        key: "p",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+            Ctrl,
+        ],
+        key: "j",
+    ): PreviousWorkspace,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+    ): System(Launcher),
     (
         modifiers: [
             Super,
@@ -120,27 +105,23 @@
     (
         modifiers: [
             Super,
+            Ctrl,
+        ],
+        key: "k",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
             Shift,
         ],
         key: "j",
     ): Move(Left),
     (
-        modifiers: [],
-        key: "Print",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-            Ctrl,
-        ],
-        key: "j",
-    ): PreviousWorkspace,
-    (
         modifiers: [
             Super,
         ],
-        key: "e",
-    ): System(HomeFolder),
+        key: "apostrophe",
+    ): System(LockScreen),
     (
         modifiers: [
             Super,
@@ -151,6 +132,19 @@
     (
         modifiers: [
             Super,
+            Shift,
+        ],
+        key: "h",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Fullscreen,
+    (
+        modifiers: [
+            Super,
             Ctrl,
         ],
         key: "Up",
@@ -158,20 +152,26 @@
     (
         modifiers: [
             Super,
-            Ctrl,
-            Shift,
-        ],
-        key: "Down",
-    ): Disable,
-    (
-        modifiers: [
-            Super,
-        ],
-    ): System(Launcher),
-    (
-        modifiers: [
-            Super,
         ],
         key: "j",
     ): Focus(Left),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "k",
+    ): Focus(Down),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "i",
+    ): Focus(Up),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "i",
+    ): Move(Up),
 }

@@ -74,6 +74,7 @@ symbol = ".NET "
 
 [directory]
 read_only = " ro"
+use_logical_path = false
 
 [elixir]
 format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'

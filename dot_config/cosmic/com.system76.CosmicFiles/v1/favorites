@@ -7,4 +7,5 @@
     Videos,
     Path("/home/bjungs/.config/"),
     Path("/home/bjungs/.config/home-manager"),
+    Path("/home/bjungs/w"),
 ]
