@@ -46,6 +46,7 @@
   "format_on_save": "off",
   "show_whitespaces": "selection",
   "agent": {
+    "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
         "fetch": {
@@ -67,14 +68,21 @@
       "model": "gpt-4.1",
       "enable_thinking": false,
     },
-    "default_profile": "write",
+    "default_profile": "minimal",
     "default_model": {
-      "effort": "medium",
+      "effort": "high",
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "model": "claude-opus-4.8",
       "enable_thinking": true,
     },
-    "favorite_models": [],
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.8",
+        "enable_thinking": true,
+        "effort": "high"
+      }
+    ],
     "model_parameters": [],
   },
   "agent_servers": {

@@ -127,6 +127,7 @@
   {
     "context": "Editor",
     "unbind": {
+      "ctrl-shift-enter": "editor::NewlineBelow",
       "ctrl-;": "editor::ToggleLineNumbers",
       "ctrl-w": "editor::SelectLargerSyntaxNode",
       "ctrl-shift-k": "editor::DeleteLine",
@@ -290,7 +291,6 @@
     "unbind": {
       "ctrl-g up": "git::Push",
       "ctrl-g shift-up": "git::ForcePush",
-      "ctrl-space": "git::StageAll",
     },
     "bindings": {
       "alt-r": "git::Pull",
@@ -378,4 +378,46 @@
       "ctrl-down": "search::NextHistoryQuery",
     },
   },
+  {
+    "context": "!Terminal",
+    "unbind": {
+      "ctrl-shift-c": "collab_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-2": "multi_workspace::ToggleWorkspaceSidebar"
+    },
+    "unbind": {
+      "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar"
+    }
+  },
+  {
+    "context": "GitCommit > Editor && mode == auto_height",
+    "unbind": {
+      "ctrl-shift-enter": "git::Amend"
+    }
+  },
+  {
+    "context": "GitPanel",
+    "unbind": {
+      "ctrl-shift-enter": "git::Amend"
+    },
+    "bindings": {
+      "ctrl-shift-enter": "git::Commit"
+    }
+  },
+  {
+    "context": "CommitEditor > Editor",
+    "unbind": {
+      "ctrl-shift-enter": "git::Amend"
+    }
+  },
+  {
+    "context": "GitDiff > Editor",
+    "unbind": {
+      "ctrl-shift-enter": "git::Amend"
+    }
+  }
 ]
