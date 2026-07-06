@@ -68,9 +68,9 @@
       "model": "gpt-4.1",
       "enable_thinking": false,
     },
-    "default_profile": "minimal",
+    "default_profile": "write",
     "default_model": {
-      "effort": "high",
+      "effort": "low",
       "provider": "copilot_chat",
       "model": "claude-opus-4.8",
       "enable_thinking": true,
@@ -80,12 +80,15 @@
         "provider": "copilot_chat",
         "model": "claude-opus-4.8",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "low"
       }
     ],
     "model_parameters": [],
   },
   "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
     "claude-acp": {
       "type": "registry",
     },
@@ -123,10 +126,14 @@
     "mode": "eager",
     "provider": "copilot",
     "copilot": {
+      "enable_next_edit_suggestions": true,
       "enterprise_uri": "https://imec.ghe.com",
     },
   },
   "languages": {
+    "Python": {
+      "show_edit_predictions": false
+    },
     "TypeScript": {
       "prettier": {
         "singleQuote": true,

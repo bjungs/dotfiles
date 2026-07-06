@@ -23,7 +23,15 @@
 
       // docks
       "escape": "editor::ToggleFocus",
-      "alt-'": "workspace::ToggleAllDocks",
+      // "alt-'": "workspace::ToggleAllDocks",
+      "alt-'": [
+        "action::Sequence",
+        [
+          "multi_workspace::CloseWorkspaceSidebar",
+          "workspace::CloseAllDocks",
+          "editor::ToggleFocus",
+        ],
+      ],
 
       // font resize
       "ctrl-+": "zed::IncreaseUiFontSize",
@@ -131,6 +139,7 @@
       "ctrl-;": "editor::ToggleLineNumbers",
       "ctrl-w": "editor::SelectLargerSyntaxNode",
       "ctrl-shift-k": "editor::DeleteLine",
+      "ctrl-y": "editor::DeleteLine",
       "ctrl-home": "editor::MoveToBeginning",
       "ctrl-end": "editor::MoveToEnd",
       "ctrl-u": "editor::UndoSelection",
@@ -196,20 +205,26 @@
     },
     "bindings": {
       // basic
-      "shift-enter": "editor::NewlineAbove",
-      "ctrl-enter": "editor::NewlineBelow",
+      "ctrl-enter": "editor::NewlineAbove",
+      "shift-enter": "editor::NewlineBelow",
       "alt-z": "editor::Undo",
       "alt-x": "editor::Cut",
       "alt-c": "editor::Copy",
       "alt-v": "editor::Paste",
       "alt-f": "buffer_search::Deploy",
-      "ctrl-k": "vim::Yank",
       "alt-ctrl-q": "editor::ToggleComments",
       "alt-ctrl-c": "editor::ToggleComments",
       "alt-shift-r": "editor::Rename",
       "ctrl-alt-f": "editor::Format",
-      "alt-ctrl-f": "editor::OpenExcerpts",
       "alt-ctrl-;": "editor::ToggleFold",
+
+      // lines
+      "ctrl-shift-i": "editor::MoveLineUp",
+      "ctrl-shift-k": "editor::MoveLineDown",
+      "alt-d": "editor::DeleteLine",
+      "alt-r": "editor::DuplicateSelection",
+      "ctrl-h": "editor::ToggleLineNumbers",
+      "ctrl-k": "editor::CutToEndOfLine",
 
       // AI/assistant
       "alt-ctrl-shift-enter": "assistant::InlineAssist",
@@ -224,19 +239,11 @@
       "alt-ctrl-]": "editor::ToggleEditPrediction",
 
       // files
-      // missing feature: show file location (intelliJ)
       "alt-f1": "pane::RevealInProjectPanel",
 
       // git blame
       "alt-y": "editor::BlameHover",
       "alt-a": "git::Blame",
-
-      // lines
-      "ctrl-shift-i": "editor::MoveLineUp",
-      "alt-d": "editor::DeleteLine",
-      "ctrl-shift-k": "editor::MoveLineDown",
-      "alt-r": "editor::DuplicateSelection",
-      "ctrl-h": "editor::ToggleLineNumbers",
 
       // navigation
       "ctrl-up": ["editor::MoveUpByLines", { "lines": 4 }],
@@ -316,10 +323,13 @@
     "unbind": {
       "alt-t": "terminal::RerunTask",
       "alt-f12": "workspace::CloseActiveDock",
+      "ctrl-shift-w": "pane::CloseActiveItem"
     },
     "bindings": {
       "alt-r": "terminal::RerunTask",
       "alt-=": "workspace::NewTerminal",
+      "ctrl-n": "workspace::NewTerminal",
+      "ctrl-w": "pane::CloseActiveItem"
     },
   },
   {
@@ -381,43 +391,88 @@
   {
     "context": "!Terminal",
     "unbind": {
-      "ctrl-shift-c": "collab_panel::ToggleFocus"
-    }
+      "ctrl-shift-c": "collab_panel::ToggleFocus",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "alt-2": "multi_workspace::ToggleWorkspaceSidebar"
+      "alt-2": "multi_workspace::ToggleWorkspaceSidebar",
     },
     "unbind": {
-      "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar"
-    }
+      "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
+    },
   },
   {
     "context": "GitCommit > Editor && mode == auto_height",
     "unbind": {
-      "ctrl-shift-enter": "git::Amend"
-    }
+      "ctrl-shift-enter": "git::Amend",
+    },
   },
   {
     "context": "GitPanel",
     "unbind": {
-      "ctrl-shift-enter": "git::Amend"
+      "ctrl-shift-enter": "git::Amend",
     },
     "bindings": {
-      "ctrl-shift-enter": "git::Commit"
-    }
+      "ctrl-shift-enter": "git::Commit",
+    },
   },
   {
     "context": "CommitEditor > Editor",
     "unbind": {
-      "ctrl-shift-enter": "git::Amend"
-    }
+      "ctrl-shift-enter": "git::Amend",
+    },
   },
   {
     "context": "GitDiff > Editor",
     "unbind": {
-      "ctrl-shift-enter": "git::Amend"
+      "ctrl-shift-enter": "git::Amend",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-;": "multi_workspace::FocusWorkspaceSidebar",
+    },
+  },
+  {
+    "context": "!AcpThread > Editor && mode == full",
+    "unbind": {
+      "alt-enter": "editor::OpenExcerpts",
+    },
+    "bindings": {
+      "ctrl-alt-f": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "OutlinePanel && not_editing",
+    "unbind": {
+      "alt-enter": "editor::OpenExcerpts",
+    },
+    "bindings": {
+      "ctrl-alt-f": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "AcpThread > Editor && mode == full",
+    "unbind": {
+      "alt-enter": "editor::OpenExcerpts",
+    },
+    "bindings": {
+      "ctrl-alt-f": "editor::OpenExcerpts",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-y": "workspace::ToggleAllDocks",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-n": "workspace::NewFile"
     }
-  }
+  },
 ]
