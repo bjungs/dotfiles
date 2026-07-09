@@ -21,24 +21,18 @@
       "alt-left": null,
       "alt-right": null,
 
-      // docks
-      "escape": "editor::ToggleFocus",
-      // "alt-'": "workspace::ToggleAllDocks",
-      "alt-'": [
-        "action::Sequence",
-        [
-          "multi_workspace::CloseWorkspaceSidebar",
-          "workspace::CloseAllDocks",
-          "editor::ToggleFocus",
-        ],
-      ],
-
       // font resize
       "ctrl-+": "zed::IncreaseUiFontSize",
       "ctrl-_": "zed::DecreaseUiFontSize",
 
       "ctrl-shift-o": "workspace::Open",
       "ctrl-alt-0": "agent::Toggle",
+    },
+  },
+  {
+    "context": "!Editor",
+    "bindings": {
+      "escape": "editor::ToggleFocus",
     },
   },
   {
@@ -108,7 +102,7 @@
       "alt-q down": "workspace::ActivatePaneDown",
       "alt-+": "workspace::ToggleZoom",
 
-      // panel split - still a bit weird
+      // panel splitting
       "alt-t right": "pane::SplitAndMoveRight",
       "alt-t left": "pane::SplitAndMoveLeft",
       "alt-t up": "pane::SplitAndMoveUp",
@@ -262,10 +256,10 @@
       "ctrl-shift-backspace": "editor::DeleteToPreviousWordStart",
       "shift-delete": "editor::DeleteToEndOfLine",
       "alt-b": "editor::GoToTypeDefinition",
-      "ctrl-left": "editor::MoveToPreviousSubwordStart",
-      "ctrl-right": "editor::MoveToNextSubwordEnd",
-      "ctrl-home": "editor::MoveToPreviousWordStart",
-      "ctrl-end": "editor::MoveToNextWordEnd",
+      "ctrl-home": "editor::MoveToPreviousSubwordStart",
+      "ctrl-end": "editor::MoveToNextSubwordEnd",
+      "ctrl-left": "editor::MoveToPreviousWordStart",
+      "ctrl-right": "editor::MoveToNextWordEnd",
 
       // text transforation
       "ctrl-shift-u": "vim::ChangeCase",
@@ -323,13 +317,13 @@
     "unbind": {
       "alt-t": "terminal::RerunTask",
       "alt-f12": "workspace::CloseActiveDock",
-      "ctrl-shift-w": "pane::CloseActiveItem"
+      "ctrl-shift-w": "pane::CloseActiveItem",
     },
     "bindings": {
       "alt-r": "terminal::RerunTask",
       "alt-=": "workspace::NewTerminal",
       "ctrl-n": "workspace::NewTerminal",
-      "ctrl-w": "pane::CloseActiveItem"
+      "ctrl-w": "pane::CloseActiveItem",
     },
   },
   {
@@ -397,10 +391,31 @@
   {
     "context": "Workspace",
     "bindings": {
+      "alt-1": "project_panel::Toggle",
       "alt-2": "multi_workspace::ToggleWorkspaceSidebar",
+      "alt-3": "terminal_panel::Toggle",
     },
     "unbind": {
       "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-'": [
+        "action::Sequence",
+        [
+          "multi_workspace::CloseWorkspaceSidebar",
+          "workspace::CloseAllDocks",
+          "workspace::FocusCenterPane",
+        ],
+      ],
+    },
+  },
+  {
+    "context": "!Editor",
+    "bindings": {
+      "alt-'": "workspace::FocusCenterPane",
     },
   },
   {
@@ -472,7 +487,52 @@
   {
     "context": "Workspace",
     "unbind": {
-      "ctrl-n": "workspace::NewFile"
-    }
+      "ctrl-n": "workspace::NewFile",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-+": [
+        "workspace::IncreaseOpenDocksSize",
+        {
+          "px": 0,
+        },
+      ],
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-alt-+": "multi_workspace::NextProject",
+      "ctrl-alt-_": "multi_workspace::PreviousProject",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-alt-_": [
+        "workspace::DecreaseOpenDocksSize",
+        {
+          "px": 0,
+        },
+      ],
+    },
+  },
+  {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-alt-_": "pane::GoForward",
+    },
+  },
+  {
+    "bindings": {
+      "ctrl-b": "editor::OpenUrl",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "alt-shift-right": "editor::SelectLargerSyntaxNode",
+    },
   },
 ]
