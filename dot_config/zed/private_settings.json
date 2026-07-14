@@ -49,21 +49,7 @@
   "show_whitespaces": "selection",
   "agent": {
     "sidebar_side": "right",
-    "tool_permissions": {
-      "tools": {
-        "fetch": {
-          "default": "allow",
-          "always_allow": [
-            {
-              "pattern": "^https?://unpkg\\.com",
-            },
-          ],
-        },
-        "terminal": {
-          "default": "allow",
-        },
-      },
-    },
+    "tool_permissions": {},
     "dock": "right",
     "inline_assistant_model": {
       "provider": "copilot_chat",
@@ -72,7 +58,7 @@
     },
     "default_profile": "write",
     "default_model": {
-      "effort": "low",
+      "effort": "high",
       "provider": "copilot_chat",
       "model": "claude-opus-4.8",
       "enable_thinking": true,
@@ -82,8 +68,8 @@
         "provider": "copilot_chat",
         "model": "claude-opus-4.8",
         "enable_thinking": true,
-        "effort": "low",
-      },
+        "effort": "high"
+      }
     ],
     "model_parameters": [],
   },

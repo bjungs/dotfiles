@@ -21,6 +21,10 @@
       "alt-left": null,
       "alt-right": null,
 
+      "alt-1": "project_panel::Toggle",
+      "alt-2": "multi_workspace::ToggleWorkspaceSidebar",
+      "alt-3": "terminal_panel::Toggle",
+
       // font resize
       "ctrl-+": "zed::IncreaseUiFontSize",
       "ctrl-_": "zed::DecreaseUiFontSize",
@@ -255,7 +259,7 @@
       "ctrl-shift-delete": "editor::DeleteToNextWordEnd",
       "ctrl-shift-backspace": "editor::DeleteToPreviousWordStart",
       "shift-delete": "editor::DeleteToEndOfLine",
-      "alt-b": "editor::GoToTypeDefinition",
+      "alt-b": "editor::GoToDefinition",
       "ctrl-home": "editor::MoveToPreviousSubwordStart",
       "ctrl-end": "editor::MoveToNextSubwordEnd",
       "ctrl-left": "editor::MoveToPreviousWordStart",
@@ -324,6 +328,11 @@
       "alt-=": "workspace::NewTerminal",
       "ctrl-n": "workspace::NewTerminal",
       "ctrl-w": "pane::CloseActiveItem",
+
+      // zed inverts these for some reason
+      // panel splitting
+      "alt-t right": "pane::SplitAndMoveLeft",
+      "alt-t left": "pane::SplitAndMoveRight",
     },
   },
   {
@@ -390,17 +399,12 @@
   },
   {
     "context": "Workspace",
-    "bindings": {
-      "alt-1": "project_panel::Toggle",
-      "alt-2": "multi_workspace::ToggleWorkspaceSidebar",
-      "alt-3": "terminal_panel::Toggle",
-    },
     "unbind": {
       "ctrl-alt-j": "multi_workspace::ToggleWorkspaceSidebar",
     },
   },
   {
-    "context": "Editor",
+    "context": "Editor && mode == full",
     "bindings": {
       "alt-'": [
         "action::Sequence",
@@ -413,7 +417,7 @@
     },
   },
   {
-    "context": "!Editor",
+    "context": "!Editor ||  mode != full",
     "bindings": {
       "alt-'": "workspace::FocusCenterPane",
     },
@@ -535,4 +539,28 @@
       "alt-shift-right": "editor::SelectLargerSyntaxNode",
     },
   },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-shift-b": "editor::GoToTypeDefinition"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-f12": "editor::GoToTypeDefinition"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-alt-shift-b": "editor::GoToTypeDefinitionSplit"
+    }
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-alt-f12": "editor::GoToTypeDefinitionSplit"
+    }
+  }
 ]
