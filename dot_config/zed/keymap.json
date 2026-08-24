@@ -22,15 +22,15 @@
       "alt-right": null,
 
       "alt-1": "project_panel::Toggle",
-      "alt-2": "multi_workspace::ToggleWorkspaceSidebar",
+      "alt-2": "agent::Toggle",
       "alt-3": "terminal_panel::Toggle",
+      "alt-4": "multi_workspace::ToggleWorkspaceSidebar",
 
       // font resize
       "ctrl-+": "zed::IncreaseUiFontSize",
       "ctrl-_": "zed::DecreaseUiFontSize",
 
       "ctrl-shift-o": "workspace::Open",
-      "ctrl-alt-0": "agent::Toggle",
     },
   },
   {
@@ -64,7 +64,6 @@
       "ctrl-k ctrl-z": "editor::ToggleSoftWrap",
       "ctrl-k z": "editor::ToggleSoftWrap",
       "ctrl-k ctrl-r": "git::Restore",
-      "ctrl-k l": "agent::OpenRulesLibrary",
       "ctrl-k ctrl-d": "editor::SelectNext",
       "ctrl-k s": "workspace::SaveWithoutFormat",
       "ctrl-k ctrl-s": "zed::OpenKeymap",
@@ -195,11 +194,9 @@
       "ctrl-k ctrl-j": "editor::UnfoldAll",
       "ctrl-k r": "editor::RevealInFileManager",
       // ignore warning: this is the same as in the default
-      "ctrl-k p": "editor::CopyPath",
+      "ctrl-k p": "workspace::CopyPath",
 
       "ctrl-k v": "svg::OpenPreviewToTheSide",
-
-      "alt-ctrl-]": "copilot::Suggest",
     },
     "bindings": {
       // basic
@@ -232,9 +229,6 @@
       "alt-ctrl--": ["editor::AddSelectionAbove", { "skip_soft_wrap": true }],
       // Insert Cursor Below
       "alt-ctrl-=": ["editor::AddSelectionBelow", { "skip_soft_wrap": true }],
-
-      // ai prediction
-      "alt-ctrl-]": "editor::ToggleEditPrediction",
 
       // files
       "alt-f1": "pane::RevealInProjectPanel",
@@ -417,7 +411,13 @@
     },
   },
   {
-    "context": "!Editor ||  mode != full",
+    "context": "!Editor || mode != full",
+    "bindings": {
+      "alt-'": "workspace::FocusCenterPane",
+    },
+  },
+  {
+    "context": "!Editor || mode != full",
     "bindings": {
       "alt-'": "workspace::FocusCenterPane",
     },
@@ -561,6 +561,30 @@
     "context": "Editor",
     "unbind": {
       "ctrl-alt-f12": "editor::GoToTypeDefinitionSplit"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "ctrl-b": [
+        "terminal::SendKeystroke",
+        "ctrl-b"
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "ctrl-o": [
+        "terminal::SendKeystroke",
+        "ctrl-o"
+      ]
     }
   }
 ]

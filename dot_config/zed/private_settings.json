@@ -7,6 +7,8 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "proxy": "",
+  "disable_ai": false,
   "use_system_prompts": false,
   "use_system_path_prompts": false,
   "cli_default_open_behavior": "existing_window",
@@ -49,7 +51,36 @@
   "show_whitespaces": "selection",
   "agent": {
     "sidebar_side": "right",
-    "tool_permissions": {},
+    "tool_permissions": {
+      "tools": {
+        "terminal": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^diff\\b"
+            },
+            {
+              "pattern": "^grep\\b"
+            },
+            {
+              "pattern": "^head\\b"
+            },
+            {
+              "pattern": "^echo\\s+=====(\\s|$)"
+            },
+            {
+              "pattern": "^echo\\s+==(\\s|$)"
+            },
+            {
+              "pattern": "^diff\\s+/tmp/fork_pholis/util/read_meta_data\\.py(\\s|$)"
+            },
+            {
+              "pattern": "^echo\\s+===(\\s|$)"
+            }
+          ]
+        }
+      }
+    },
     "dock": "right",
     "inline_assistant_model": {
       "provider": "copilot_chat",
@@ -58,7 +89,7 @@
     },
     "default_profile": "write",
     "default_model": {
-      "effort": "high",
+      "effort": "medium",
       "provider": "copilot_chat",
       "model": "claude-opus-4.8",
       "enable_thinking": true,
@@ -68,14 +99,14 @@
         "provider": "copilot_chat",
         "model": "claude-opus-4.8",
         "enable_thinking": true,
-        "effort": "high"
+        "effort": "medium"
       }
     ],
     "model_parameters": [],
   },
   "agent_servers": {
     "github-copilot-cli": {
-      "type": "registry",
+      "type": "registry"
     },
     "claude-acp": {
       "type": "registry",
@@ -118,6 +149,7 @@
       "enterprise_uri": "https://imec.ghe.com",
     },
   },
+  "file_scan_inclusions": ["**/.env*"],
   "languages": {
     "TypeScript": {
       "prettier": {
