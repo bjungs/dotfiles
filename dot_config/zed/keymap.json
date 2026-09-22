@@ -64,7 +64,7 @@
       "ctrl-k ctrl-z": "editor::ToggleSoftWrap",
       "ctrl-k z": "editor::ToggleSoftWrap",
       "ctrl-k ctrl-r": "git::Restore",
-      "ctrl-k l": "agent::ManageSkills",
+      "ctrl-k l": "agent::OpenRulesLibrary",
       "ctrl-k ctrl-d": "editor::SelectNext",
       "ctrl-k s": "workspace::SaveWithoutFormat",
       "ctrl-k ctrl-s": "zed::OpenKeymap",
@@ -194,8 +194,12 @@
       "ctrl-k ctrl-0": "editor::FoldAll",
       "ctrl-k ctrl-j": "editor::UnfoldAll",
       "ctrl-k r": "editor::RevealInFileManager",
-      "ctrl-k p": "workspace::CopyPath",
+      // ignore warning: this is the same as in the default
+      "ctrl-k p": "editor::CopyPath",
+
       "ctrl-k v": "svg::OpenPreviewToTheSide",
+
+      "alt-ctrl-]": "copilot::Suggest",
     },
     "bindings": {
       // basic
