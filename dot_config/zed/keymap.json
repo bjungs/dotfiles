@@ -194,12 +194,8 @@
       "ctrl-k ctrl-0": "editor::FoldAll",
       "ctrl-k ctrl-j": "editor::UnfoldAll",
       "ctrl-k r": "editor::RevealInFileManager",
-      // ignore warning: this is the same as in the default
-      "ctrl-k p": "editor::CopyPath",
-
+      "ctrl-k p": "workspace::CopyPath",
       "ctrl-k v": "svg::OpenPreviewToTheSide",
-
-      "alt-ctrl-]": "copilot::Suggest",
     },
     "bindings": {
       // basic
