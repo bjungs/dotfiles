@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": true,
   "use_system_prompts": false,
   "use_system_path_prompts": false,
   "cli_default_open_behavior": "existing_window",
@@ -48,7 +49,9 @@
   "format_on_save": "off",
   "show_whitespaces": "selection",
   "agent": {
-    "sidebar_side": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "tool_permissions": {},
     "dock": "right",
     "inline_assistant_model": {
