@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "copilot": {
+    "enterprise_uri": "https://imec.ghe.com"
+  },
   "disable_ai": true,
   "use_system_prompts": false,
   "use_system_path_prompts": false,
@@ -118,7 +121,6 @@
     "provider": "copilot",
     "copilot": {
       "enable_next_edit_suggestions": true,
-      "enterprise_uri": "https://imec.ghe.com",
     },
   },
   "languages": {
@@ -136,4 +138,7 @@
       },
     },
   },
+  "file_types": {
+    "JSONC": ["devbox.json"]
+  }
 }
